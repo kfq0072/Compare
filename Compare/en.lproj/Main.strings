@@ -1,0 +1,15 @@
+
+/* Class = "UITabBarItem"; title = "网购"; ObjectID = "7QW-4x-6px"; */
+"7QW-4x-6px.title" = "网购";
+
+/* Class = "UINavigationItem"; title = "团购"; ObjectID = "bya-90-GjB"; */
+"bya-90-GjB.title" = "团购";
+
+/* Class = "UITabBarItem"; title = "我"; ObjectID = "kS5-NJ-uDd"; */
+"kS5-NJ-uDd.title" = "我";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "vbp-qX-fWA"; */
+"vbp-qX-fWA.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Item 1"; ObjectID = "x9Y-8Z-UQc"; */
+"x9Y-8Z-UQc.title" = "Item 1";
