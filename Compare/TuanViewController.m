@@ -44,8 +44,8 @@
         [self disPlayMenuItem];
         _dismissFlag = !_dismissFlag;
     }
-    
-    [self initBandView];
+    //TODO: dismiss
+//    [self initBandView];
 }
 
 - (void)disPlayMenuItem {

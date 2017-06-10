@@ -12,6 +12,13 @@
 #import "Utility.h"
 #import <iAd/iAd.h>
 
+#import <SMS_SDK/SMSSDK+DeprecatedMethods.h>
+
+#define appKey @"bc8bc5ee6870"
+#define appSecret @"4bb6b7f1ed5fd2e9ad4a7e12d77c8d30"
+
+
+
 @interface AppDelegate ()
 @property (nonatomic, strong)ADBannerView *bannerView;
 
@@ -21,8 +28,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [SMSSDK registerApp:appKey withSecret:appSecret];
+    
     self.window = [[UIWindow alloc] initWithFrame:ScreenFrame];
-    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
    
     UIViewController *VC = nil;
 
@@ -30,10 +40,14 @@
         VC = [[GuideViewController alloc] init];
         self.window.rootViewController = VC;
     }else {
-        
+       UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil]; 
         VC = [story instantiateViewControllerWithIdentifier:@"MainTab"];
-//        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:VC];
         self.window.rootViewController = VC;
+        
+//        UIStoryboard *loginSb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+//        VC = [loginSb instantiateViewControllerWithIdentifier:@"LoginViewController"];
+//        self.window.rootViewController = VC;
+
     }
     
     self.tuanImageArrays = [[NSMutableArray alloc] init];
@@ -41,9 +55,8 @@
     
     
     [self.window makeKeyAndVisible];
-
-
-
+    
+  
     return YES;
 }
 

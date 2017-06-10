@@ -8,12 +8,16 @@
 
 #import "GuideViewController.h"
 #import "Utility.h"
-#import "MainViewController.h"
+#import "MainRegViewController.h"
+#import "RegViewController.h"
 
-@interface GuideViewController (){
+
+
+@interface GuideViewController ()<UIScrollViewDelegate>{
     UIImageView *imageViewOne;
     UIImageView *imageViewTwo;
     UIImageView *imageViewThree;
+    UIButton    *_forwardBtn;
 }
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -48,6 +52,9 @@
     [self createViewOne];
     [self createViewTwo];
     [self createViewThree];
+    [self createForwardBtn];
+    [self setForwardBtnAnmiation];
+    
 }
 
 
@@ -83,7 +90,6 @@
     
 }
 
-
 -(void)createViewThree{
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(ScreenSize.width*2, 0, ScreenSize.width, ScreenSize.height)];
     imageViewThree = [[UIImageView alloc] initWithFrame:ScreenFrame];
@@ -96,6 +102,28 @@
     [imageViewThree addGestureRecognizer:singleTap1];
     
     [_scrollView addSubview:view];
+}
+
+- (void)createForwardBtn{
+    if (_forwardBtn == nil) {
+        _forwardBtn = [UIButton new];
+        _forwardBtn.frame = CGRectMake(ScreenSize.width - 100, ScreenSize.height/2 -50, 100, 100);
+        [_forwardBtn setImage:[UIImage imageNamed:@"forward.png"] forState:UIControlStateNormal];
+        _forwardBtn.userInteractionEnabled = NO;
+        [self.view addSubview:_forwardBtn];
+    }
+}
+
+- (void)setForwardBtnAnmiation{
+    CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    scaleAnimation.fromValue = [NSNumber numberWithFloat:1.0];
+    scaleAnimation.toValue = [NSNumber numberWithFloat:2.0];
+    scaleAnimation.autoreverses = YES;
+    scaleAnimation.fillMode = kCAFillModeForwards;
+    scaleAnimation.removedOnCompletion = NO;
+    scaleAnimation.repeatCount = MAXFLOAT;
+    scaleAnimation.duration = 1.5;
+    [_forwardBtn.layer addAnimation:scaleAnimation forKey:@"scaleAnimation"];
 }
 #pragma mark -- tap image
 -(void)buttonpress1:(id)sender
@@ -112,19 +140,25 @@
     CGFloat pageWidth = CGRectGetWidth(self.view.bounds);
     CGPoint scrollPoint = CGPointMake(pageWidth*2, 0);
     [_scrollView setContentOffset:scrollPoint animated:YES];
-    
     _pageControl.currentPage = 2;
     
 }
 
 -(void)buttonpress3:(id)sender
 {
-    NSLog(@"引导页完成");
+    NSLog(@"引导页完成,调到注册页面");
+    //到注册界面
+    
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    MainViewController *mainVC = [story instantiateViewControllerWithIdentifier:@"MainTab"];
-    [self presentViewController:mainVC animated:YES completion:nil];
+//    MainRegViewController *mainVC = [story instantiateViewControllerWithIdentifier:@"MainReg"];
+//    [self presentViewController:mainVC animated:YES completion:nil];
+    
+    RegViewController* reg=[[RegViewController alloc] init];
+    [self presentViewController:reg animated:YES completion:^{
+           [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"isGuided"];
+    }];
 
-    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"isGuided"];
+ 
 }
 
 
@@ -144,6 +178,11 @@
 
 - (void)tapClick:(NSInteger)index {
     NSLog(@"%ld",index);
+}
+
+#pragma mark - 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    
 }
 
 /*

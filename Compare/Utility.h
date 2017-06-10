@@ -22,4 +22,5 @@ typedef enum {
 
 @interface Utility : NSObject
 + (UIImage*) createImageWithColor:(UIColor*) color;
++ (CAGradientLayer*)designColor :(CGRect)rect;
 @end

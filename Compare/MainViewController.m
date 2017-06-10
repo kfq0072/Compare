@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "Utility.h"
 #import "LeftViewController.h"
+#import "LoginViewController.h"
 
 @interface MainViewController ()
 @property (nonatomic, strong) NSMutableIndexSet *optionIndices;
@@ -20,7 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     
     UITabBarItem *item1 = [self.tabBar.items objectAtIndex:0];
     item1.image = [[UIImage imageNamed:@"tuan"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

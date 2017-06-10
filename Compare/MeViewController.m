@@ -12,6 +12,8 @@
 #import "SettingTableViewController.h"
 #import "MBProgressHUD.h"
 
+
+
 @interface MeViewController ()<UITableViewDataSource,UITableViewDelegate,MBProgressHUDDelegate> {
     int _index;
 }
@@ -32,13 +34,11 @@
     UIImage *imagetop= [Utility createImageWithColor:topColor];
     [self.navigationController.navigationBar setBackgroundImage:imagetop forBarMetrics:UIBarMetricsDefault];
     // Do any additional setup after loading the view.
-//    NSDictionary *cellDic = @{@"":@""}
-//    NSArray *imageName = [@""];
-    NSArray *imageName = @[@"pic",@"save",@"money",@"face",@"set",@"clear"];
+//    NSArray *imageName = @[@"pic",@"save",@"money",@"face",@"set",@"clear"];
     NSArray *imageTitle = @[@"摇一摇",@"设置",@"清除内存"];
     _imageArray = imageTitle;
     _index = 0 ;
-    
+    [_hTableView.layer insertSublayer:[Utility designColor:_hTableView.frame] atIndex:0];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,7 +60,12 @@
     return 3;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 10.0;
+    if (section == 0) {
+        return 0.0;
+    }else {
+        return 10.0;
+    }
+   
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0 && indexPath.section ==0 ) {
@@ -85,9 +90,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identiy];
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.backgroundColor = [UIColor clearColor];
     if (indexPath.row == 0 && indexPath.section == 0) {
         cell.imageView.image = [UIImage imageNamed:@"me"];
-        cell.textLabel.text = @"your name";
+        cell.textLabel.text = @"your information";
     }else {
         cell.textLabel.text = [_imageArray objectAtIndex:_index];
         _index ++;

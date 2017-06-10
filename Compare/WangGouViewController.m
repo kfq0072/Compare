@@ -46,7 +46,7 @@
          [self buttonTap];
         _dismissFlag = !_dismissFlag;
     }
-    [self initBandView];
+//    [self initBandView];
 }
 
 - (void)didReceiveMemoryWarning {
