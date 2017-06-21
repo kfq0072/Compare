@@ -30,11 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"我";
-    UIColor *topColor = [UIColor colorWithRed:196.0f/255.0f green:166.0/255.0 blue:189.0f/255.0f alpha:1.0];
-    UIImage *imagetop= [Utility createImageWithColor:topColor];
-    [self.navigationController.navigationBar setBackgroundImage:imagetop forBarMetrics:UIBarMetricsDefault];
-    // Do any additional setup after loading the view.
-//    NSArray *imageName = @[@"pic",@"save",@"money",@"face",@"set",@"clear"];
     NSArray *imageTitle = @[@"摇一摇",@"设置",@"清除内存"];
     _imageArray = imageTitle;
     _index = 0 ;
@@ -46,16 +41,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 3;
 }
@@ -104,6 +89,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 1) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         AnimationPauseViewController  *animationVC = [storyboard instantiateViewControllerWithIdentifier:@"animationVC"];

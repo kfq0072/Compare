@@ -23,15 +23,6 @@
     [super viewDidLoad];
     _dismissFlag = YES;
     self.title = @"团购";
-    //TODO: 侧栏
-//    UIImage *image = [[UIImage imageNamed:@"icon1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    
-//    UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithImage:image  style:UIBarButtonItemStylePlain target:self action:@selector(disPlayMenuItem)];
-//    self.navigationItem.leftBarButtonItem = leftBar;
-
-    UIColor *topColor = [UIColor colorWithRed:196.0f/255.0f green:166.0/255.0 blue:189.0f/255.0f alpha:1.0];
-    UIImage *imagetop= [Utility createImageWithColor:topColor];
-    [self.navigationController.navigationBar setBackgroundImage:imagetop forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)didReceiveMemoryWarning {

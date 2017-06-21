@@ -39,8 +39,8 @@
 
 + (instancetype)menuViewWithItems:(NSArray*)items
 {
-//    JKPopMenuView *view = [[JKPopMenuView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    JKPopMenuView *view = [[JKPopMenuView alloc]initWithFrame:CGRectMake(0, 64, JK_SCREEN_BOUNDS.size.width, JK_SCREEN_HEIGHT-49-64)];
+    JKPopMenuView *view = [[JKPopMenuView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+//    JKPopMenuView *view = [[JKPopMenuView alloc]initWithFrame:CGRectMake(0, 64, JK_SCREEN_BOUNDS.size.width, JK_SCREEN_HEIGHT-49-64)];
   
     view.menuItems = items;
     return view;

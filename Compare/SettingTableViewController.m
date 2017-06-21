@@ -8,6 +8,7 @@
 
 #import "SettingTableViewController.h"
 #import "AppDelegate.h"
+#import "Utility.h"
 
 @interface SettingTableViewController ()<UIAlertViewDelegate>
 
@@ -18,11 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.tableView.layer insertSublayer:[Utility designColor:self.tableView.frame] atIndex:0];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,11 +35,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     return 1;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+ 
     if (indexPath.section == 2) {
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Log out" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"NO",nil];
         alert.delegate = self;
@@ -50,9 +47,6 @@
         [alert show];
     }
 }
-
-
-
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 

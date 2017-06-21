@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "Utility.h"
 #import <iAd/iAd.h>
 
 @interface BaseViewController ()<ADBannerViewDelegate>
@@ -17,6 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIColor *topColor = [UIColor colorWithRed:196.0f/255.0f green:166.0/255.0 blue:189.0f/255.0f alpha:1.0];
+    UIImage *imagetop= [Utility createImageWithColor:topColor];
+    [self.navigationController.navigationBar setBackgroundImage:imagetop forBarMetrics:UIBarMetricsDefault];
+
     // Do any additional setup after loading the view.
 }
 

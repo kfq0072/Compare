@@ -11,7 +11,7 @@
 #import "MainViewController.h"
 #import "Utility.h"
 #import <iAd/iAd.h>
-
+#import "BaseNavViewController.h"
 #import <SMS_SDK/SMSSDK+DeprecatedMethods.h>
 
 #define appKey @"bc8bc5ee6870"
@@ -42,7 +42,8 @@
     }else {
        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil]; 
         VC = [story instantiateViewControllerWithIdentifier:@"MainTab"];
-        self.window.rootViewController = VC;
+        BaseNavViewController *baseNav = [[BaseNavViewController alloc] initWithRootViewController:VC];
+        self.window.rootViewController = baseNav;
         
 //        UIStoryboard *loginSb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
 //        VC = [loginSb instantiateViewControllerWithIdentifier:@"LoginViewController"];
