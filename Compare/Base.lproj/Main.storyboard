@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vra-fT-mGL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uV5-Ku-c8n">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -148,6 +148,24 @@
             </objects>
             <point key="canvasLocation" x="-905" y="1128"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="O7r-aZ-bKE">
+            <objects>
+                <viewController id="uV5-Ku-c8n" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sM7-JI-2yt"/>
+                        <viewControllerLayoutGuide type="bottom" id="vuB-gQ-eNG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2cq-Un-ask">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cVN-Pw-cw3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-721" y="358"/>
+        </scene>
         <!--Item-->
         <scene sceneID="XBN-vb-mHG">
             <objects>
@@ -167,25 +185,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzI-Ni-1mZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="872.79999999999995" y="1049.3253373313344"/>
-        </scene>
-        <!--我-->
-        <scene sceneID="bNg-VA-08r">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vhd-3k-l7o" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我" id="kS5-NJ-uDd"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dXv-oX-Pdl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="hDg-hu-6PX" kind="relationship" relationship="rootViewController" id="aTE-X7-z45"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dmH-sS-e0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1668" y="1127.5862068965519"/>
         </scene>
         <!--Me View Controller-->
         <scene sceneID="FU9-3F-3V9">
@@ -257,6 +256,7 @@
                                                 <constraint firstItem="Ocj-PQ-GA3" firstAttribute="leading" secondItem="a54-O7-BwK" secondAttribute="leadingMargin" constant="18" id="grQ-Tg-63y"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -281,6 +281,7 @@
                                                 <constraint firstItem="VCR-Z9-jif" firstAttribute="leading" secondItem="wAA-DL-Rh2" secondAttribute="leadingMargin" constant="20" id="mMv-0B-uwC"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <segue destination="5Ia-2f-NKO" kind="push" id="MaS-j0-hdd"/>
                                         </connections>
@@ -306,6 +307,7 @@
                                                 <constraint firstItem="pA5-Uj-Jeu" firstAttribute="centerY" secondItem="a5y-c3-b6m" secondAttribute="centerY" constant="3" id="Rad-3c-uqi"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="pA5-Uj-Jeu" firstAttribute="centerX" secondItem="JHt-BW-bPI" secondAttribute="centerX" constant="2" id="Dlw-LB-PbL"/>
                                         </constraints>
@@ -335,8 +337,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="物比三家简介： 制作于小柯 Emial：kfq0072@163.com" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pzy-wf-xSr">
-                                <frame key="frameInset" width="600" height="600"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="物比三家简介： 制作于小柯 Emial：kfq0072@163.com" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pzy-wf-xSr">
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

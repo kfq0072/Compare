@@ -12,6 +12,7 @@
 #import "RightViewController.h"
 #import "LoginViewController.h"
 #import "LeftNagViewController.h"
+#import "RESideMenu.h"
 
 @interface MainViewController (){
     BOOL _isShowingLeft;
@@ -30,19 +31,20 @@
     [self setTabItem];
     [self setLeftBarBoutton];
     //add swipe gesture
-    UISwipeGestureRecognizer *swipeGestureRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGesture:)];
-    [swipeGestureRight setDirection:UISwipeGestureRecognizerDirectionRight];
-    [self.view addGestureRecognizer:swipeGestureRight];
-    
-    UISwipeGestureRecognizer *swipeGestureLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGesture:)];
-    [swipeGestureLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
-    [self.view addGestureRecognizer:swipeGestureLeft];
+//    UISwipeGestureRecognizer *swipeGestureRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGesture:)];
+//    [swipeGestureRight setDirection:UISwipeGestureRecognizerDirectionRight];
+//    [self.view addGestureRecognizer:swipeGestureRight];
+//    
+//    UISwipeGestureRecognizer *swipeGestureLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGesture:)];
+//    [swipeGestureLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+//    [self.view addGestureRecognizer:swipeGestureLeft];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.view addSubview:self.leftController.view];
-    [self.view addSubview:self.rightController.view];
+    self.view.hidden = NO;
+//    [self.view addSubview:self.leftController.view];
+//    [self.view addSubview:self.rightController.view];
 
 }
 
@@ -72,15 +74,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)displayLeftNav {
-    if (_isShowingLeft == YES) {
-        [self hideLeftController];
-    }else{
-        [self showLeftController];
-    }
-    _isShowingLeft = !_isShowingLeft;
-}
-
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     NSLog(@"%@",item);
 }
@@ -88,9 +81,8 @@
 - (void)setLeftBarBoutton {
     UIImage *image = [[UIImage imageNamed:@"me"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithImage:image  style:UIBarButtonItemStylePlain target:self action:@selector(displayLeftNav)];
+    UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithImage:image  style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
     self.navigationItem.leftBarButtonItem = leftBar;
-
 }
 
 -(LeftViewController *)leftController {

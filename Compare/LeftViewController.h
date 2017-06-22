@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol didSelectRowInLeftControllerDelegate<NSObject>
+- (void)didSelectRowInLeft;
+@end
 @interface LeftViewController : UIViewController
-
+@property(nonatomic, weak)id<didSelectRowInLeftControllerDelegate>delegate;
 @end

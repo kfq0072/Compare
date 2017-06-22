@@ -13,13 +13,17 @@
 #import <iAd/iAd.h>
 #import "BaseNavViewController.h"
 #import <SMS_SDK/SMSSDK+DeprecatedMethods.h>
+#import "LeftViewController.h"
+#import "LeftNagViewController.h"
+#import "RESideMenu.h"
+#import "ViewController.h"
 
 #define appKey @"bc8bc5ee6870"
 #define appSecret @"4bb6b7f1ed5fd2e9ad4a7e12d77c8d30"
 
 
 
-@interface AppDelegate ()
+@interface AppDelegate ()<RESideMenuDelegate>
 @property (nonatomic, strong)ADBannerView *bannerView;
 
 @end
@@ -40,20 +44,33 @@
         VC = [[GuideViewController alloc] init];
         self.window.rootViewController = VC;
     }else {
-       UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil]; 
-        VC = [story instantiateViewControllerWithIdentifier:@"MainTab"];
-        BaseNavViewController *baseNav = [[BaseNavViewController alloc] initWithRootViewController:VC];
-        self.window.rootViewController = baseNav;
+//       UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil]; 
+//        VC = [story instantiateViewControllerWithIdentifier:@"MainTab"];
+//        BaseNavViewController *baseNav = [[BaseNavViewController alloc] initWithRootViewController:VC];
+//
+//        LeftNagViewController *leftNav = [[LeftNagViewController alloc] initWithRootViewController:[[LeftViewController alloc] init]];
+//        RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:baseNav leftMenuViewController:leftNav rightMenuViewController:nil];
+//        
+//        sideMenuViewController.backgroundImage = [UIImage imageNamed:@"Stars"];
+//        sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent
+//        sideMenuViewController.delegate = self;
+//        sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
+//        sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
+//        sideMenuViewController.contentViewShadowOpacity = 0.6;
+//        sideMenuViewController.contentViewShadowRadius = 12;
+//        sideMenuViewController.contentViewShadowEnabled = YES;
+//        self.window.rootViewController = sideMenuViewController;
         
 //        UIStoryboard *loginSb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
 //        VC = [loginSb instantiateViewControllerWithIdentifier:@"LoginViewController"];
 //        self.window.rootViewController = VC;
+        
+       
+        VC = [[ViewController alloc] init];
+        BaseNavViewController *baseNav = [[BaseNavViewController alloc] initWithRootViewController:VC];
+        self.window.rootViewController = VC;
 
     }
-    
-    self.tuanImageArrays = [[NSMutableArray alloc] init];
-    self.wangImageArrays = [[NSMutableArray alloc] init];
-    
     
     [self.window makeKeyAndVisible];
     
@@ -83,6 +100,26 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark RESideMenu Delegate
 
+- (void)sideMenu:(RESideMenu *)sideMenu willShowMenuViewController:(UIViewController *)menuViewController
+{
+    NSLog(@"willShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
+}
+
+- (void)sideMenu:(RESideMenu *)sideMenu didShowMenuViewController:(UIViewController *)menuViewController
+{
+    NSLog(@"didShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
+}
+
+- (void)sideMenu:(RESideMenu *)sideMenu willHideMenuViewController:(UIViewController *)menuViewController
+{
+    NSLog(@"willHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
+}
+
+- (void)sideMenu:(RESideMenu *)sideMenu didHideMenuViewController:(UIViewController *)menuViewController
+{
+    NSLog(@"didHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
+}
 
 @end

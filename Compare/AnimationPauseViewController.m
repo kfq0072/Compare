@@ -16,6 +16,29 @@
 @synthesize imgUp;
 @synthesize imgDown;
 
+-(void)viewDidLoad {
+    [super viewDidLoad];
+    UIImage *image = [[UIImage imageNamed:@"me"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(dismissAnimationVC)];
+    self.navigationItem.leftBarButtonItem = leftBar;
+    
+    aiLoad.hidden=YES;
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"glass" ofType:@"wav"];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:path], &soundID);
+    [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addAnimations) name:@"shake" object:nil];
+}
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+}
+
+- (void)dismissAnimationVC {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -61,8 +84,6 @@
 }
 
 #pragma mark - 摇一摇
-
-
 -(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if(motion==UIEventSubtypeMotionShake)
@@ -83,29 +104,9 @@
     AudioServicesPlaySystemSound (soundID);	
         
     }
-
 }
-
-
 
 #pragma mark - View lifecycle
-- (void)viewDidLoad
-{  
-    aiLoad.hidden=YES;
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"glass" ofType:@"wav"];
-	AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:path], &soundID);
-    [super viewDidLoad];
-
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addAnimations) name:@"shake" object:nil];    
-}
-
-
-- (void)viewDidUnload
-{
-  
-    [super viewDidUnload];
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
@@ -118,18 +119,6 @@
     [self addAnimations];
     //添加    
 }
-
-//-(void)sound{
-//
-//    //添加
-//    AudioServicesPlaySystemSound (soundID);
-//    
-//    
-//    
-//    NSTimer *addEnemyTimer;
-//    addEnemyTimer=[NSTimer scheduledTimerWithTimeInterval:(2.0) target:self selector:@selector(sound) userInfo:nil repeats:NO]; 
-//
-//}
 
 
 @end

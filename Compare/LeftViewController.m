@@ -11,6 +11,9 @@
 #import "AnimationPauseViewController.h"
 #import "SettingTableViewController.h"
 #import "MBProgressHUD.h"
+#import "RESideMenu.h"
+#import "RESideMenu+MyFunction.h"
+#import "BaseNavViewController.h"
 
 @interface LeftViewController ()<UITableViewDataSource,UITableViewDelegate,MBProgressHUDDelegate> {
     int _index;
@@ -40,13 +43,11 @@
     _imageArray = imageTitle;
     _index = 0 ;
     
-    UITableView *tableV=[[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width-100, self.view.frame.size.height)];
+    UITableView *tableV=[[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)style:UITableViewStyleGrouped];
     tableV.backgroundColor=[UIColor whiteColor];
     tableV.delegate=self;
     tableV.dataSource=self;
     [self.view addSubview:tableV];
-    self.view.backgroundColor = [UIColor redColor];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -88,7 +89,7 @@
     if (nil == cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identiy];
     }
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.accessoryType = UITableViewCellAccessoryNone;
     cell.backgroundColor = [UIColor clearColor];
     if (indexPath.row == 0 && indexPath.section == 0) {
         cell.imageView.image = [UIImage imageNamed:@"me"];
@@ -105,14 +106,27 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 1) {
+
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         AnimationPauseViewController  *animationVC = [storyboard instantiateViewControllerWithIdentifier:@"animationVC"];
-        [self.navigationController pushViewController:animationVC animated:YES];
+        BaseNavViewController *baseNav = [[BaseNavViewController alloc] initWithRootViewController:animationVC];
+        [self.navigationController presentViewController:baseNav animated:YES completion:^{
+            if ([self.delegate respondsToSelector:@selector(didSelectRowInLeft)]) {
+                [self.delegate didSelectRowInLeft];
+            }
+        }];
+       
+        
     }else if (indexPath.section == 2) {
         if (indexPath.row == 0) {
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             SettingTableViewController *setTb = [storyboard instantiateViewControllerWithIdentifier:@"SettingTb"];
-            [self.navigationController pushViewController:setTb animated:YES];
+            BaseNavViewController *baseNav = [[BaseNavViewController alloc] initWithRootViewController:setTb];
+            [self.navigationController presentViewController:baseNav animated:YES completion:^{
+                if ([self.delegate respondsToSelector:@selector(didSelectRowInLeft)]) {
+                    [self.delegate didSelectRowInLeft];
+                }
+            }];
         }else {
             [self showDeterminateActivity];
         }

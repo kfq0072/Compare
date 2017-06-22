@@ -40,8 +40,16 @@ static NSString * const kcellIdentifier = @"CollectCellID";
     }];
     //通过Nib生成cell，然后注册 Nib的view需要继承 UICollectionViewCell
     [_mCollectionView registerNib:[UINib nibWithNibName:@"AppsCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:kcellIdentifier];
-//     [self.mCollectionView.layer insertSublayer:[Utility designColor: self.mCollectionView.frame] atIndex:0];
-    // Do any additional setup after loading the view.
+    UIColor *topColor = [UIColor colorWithRed:196.0f/255.0f green:166.0/255.0 blue:189.0f/255.0f alpha:1.0];
+    UIColor *bottomColor = [UIColor colorWithRed:220.0f/255.0f green:191.0/255.0 blue:192.0f/255.0f alpha:1.0];
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = self.view.frame;
+    UIColor *midColor = [UIColor colorWithRed:220.0f/255.0f green:231.0/255.0 blue:164.0f/255.0f alpha:1.0];
+    gradient.colors = [NSArray arrayWithObjects:(id)topColor.CGColor,
+                       (id)midColor.CGColor,
+                       (id)bottomColor.CGColor,nil];
+    [self.view.layer insertSublayer:gradient atIndex:0];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,7 +63,7 @@ static NSString * const kcellIdentifier = @"CollectCellID";
         _mCollectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
         _mCollectionView.dataSource = self;
         _mCollectionView.delegate = self;
-        _mCollectionView.backgroundColor = [UIColor purpleColor];
+        _mCollectionView.backgroundColor = [UIColor clearColor];
         
     }
     return _mCollectionView;

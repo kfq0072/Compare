@@ -58,7 +58,6 @@
 		759C3F411BBF772800BDFCFD /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 759C3F401BBF772800BDFCFD /* Utility.m */; };
 		759C3F471BBF793B00BDFCFD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759C3F461BBF793B00BDFCFD /* MainViewController.m */; };
 		759C3F4B1BBF79CC00BDFCFD /* RNFrostedSidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = 759C3F4A1BBF79CC00BDFCFD /* RNFrostedSidebar.m */; };
-		759C3F4E1BBF802000BDFCFD /* SliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759C3F4D1BBF802000BDFCFD /* SliderViewController.m */; };
 		759C3F521BBF804500BDFCFD /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759C3F511BBF804500BDFCFD /* LeftViewController.m */; };
 		759C3F551BBFA7F700BDFCFD /* TuanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759C3F541BBFA7F700BDFCFD /* TuanViewController.m */; };
 		759C3F5B1BBFA8CC00BDFCFD /* JKPopMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 759C3F581BBFA8CC00BDFCFD /* JKPopMenuItem.m */; };
@@ -125,6 +124,11 @@
 		75FDCCD01EFA7720009FBDE5 /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDCCCF1EFA7720009FBDE5 /* RightViewController.m */; };
 		75FDCCD31EFAB45A009FBDE5 /* LeftNagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDCCD21EFAB45A009FBDE5 /* LeftNagViewController.m */; };
 		75FDCCD61EFAB980009FBDE5 /* BaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDCCD51EFAB980009FBDE5 /* BaseNavViewController.m */; };
+		75FDCCDE1EFB4ECB009FBDE5 /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDCCD91EFB4ECB009FBDE5 /* RECommonFunctions.m */; };
+		75FDCCDF1EFB4ECB009FBDE5 /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDCCDB1EFB4ECB009FBDE5 /* RESideMenu.m */; };
+		75FDCCE01EFB4ECB009FBDE5 /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDCCDD1EFB4ECB009FBDE5 /* UIViewController+RESideMenu.m */; };
+		75FDCCE21EFB5319009FBDE5 /* Stars@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75FDCCE11EFB5319009FBDE5 /* Stars@2x.png */; };
+		75FDCCE51EFB5F6A009FBDE5 /* RESideMenu+MyFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDCCE41EFB5F6A009FBDE5 /* RESideMenu+MyFunction.m */; };
 		927A9E3D7C703BE204DD4A18 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA0F8024E5FBCA31D2828E0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -223,8 +227,6 @@
 		759C3F461BBF793B00BDFCFD /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		759C3F491BBF79CC00BDFCFD /* RNFrostedSidebar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNFrostedSidebar.h; sourceTree = "<group>"; };
 		759C3F4A1BBF79CC00BDFCFD /* RNFrostedSidebar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNFrostedSidebar.m; sourceTree = "<group>"; };
-		759C3F4C1BBF802000BDFCFD /* SliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderViewController.h; sourceTree = "<group>"; };
-		759C3F4D1BBF802000BDFCFD /* SliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderViewController.m; sourceTree = "<group>"; };
 		759C3F501BBF804500BDFCFD /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		759C3F511BBF804500BDFCFD /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		759C3F531BBFA7F700BDFCFD /* TuanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuanViewController.h; sourceTree = "<group>"; };
@@ -329,6 +331,15 @@
 		75FDCCD21EFAB45A009FBDE5 /* LeftNagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftNagViewController.m; sourceTree = "<group>"; };
 		75FDCCD41EFAB980009FBDE5 /* BaseNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavViewController.h; sourceTree = "<group>"; };
 		75FDCCD51EFAB980009FBDE5 /* BaseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavViewController.m; sourceTree = "<group>"; };
+		75FDCCD81EFB4ECB009FBDE5 /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
+		75FDCCD91EFB4ECB009FBDE5 /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
+		75FDCCDA1EFB4ECB009FBDE5 /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
+		75FDCCDB1EFB4ECB009FBDE5 /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESideMenu.m; sourceTree = "<group>"; };
+		75FDCCDC1EFB4ECB009FBDE5 /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
+		75FDCCDD1EFB4ECB009FBDE5 /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
+		75FDCCE11EFB5319009FBDE5 /* Stars@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Stars@2x.png"; sourceTree = "<group>"; };
+		75FDCCE31EFB5F6A009FBDE5 /* RESideMenu+MyFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RESideMenu+MyFunction.h"; sourceTree = "<group>"; };
+		75FDCCE41EFB5F6A009FBDE5 /* RESideMenu+MyFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RESideMenu+MyFunction.m"; sourceTree = "<group>"; };
 		B02D0DBCC1E15E8A8BC3C74E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DDA0F8024E5FBCA31D2828E0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -431,6 +442,7 @@
 				75FDCCC51EFA3443009FBDE5 /* toutiao.jpeg */,
 				75FDCCC61EFA3443009FBDE5 /* aliPay.jpeg */,
 				75FDCCCC1EFA67E3009FBDE5 /* qq.jpeg */,
+				75FDCCE11EFB5319009FBDE5 /* Stars@2x.png */,
 			);
 			name = res;
 			sourceTree = "<group>";
@@ -611,14 +623,13 @@
 		759C3F481BBF79AB00BDFCFD /* 3td */ = {
 			isa = PBXGroup;
 			children = (
+				75FDCCD71EFB4ECB009FBDE5 /* RESideMenu */,
 				75FDCC9E1EFA2419009FBDE5 /* Masonry */,
 				75DBD97E1BE50524007269F9 /* SMS_SDK */,
 				756A4FBE1BDCCA990068A5C6 /* HUD */,
 				75B851601BC3A12900ECEFE1 /* GMDCircleLoader */,
 				759C3F6B1BBFD0FC00BDFCFD /* WangGouMenu */,
 				759C3F561BBFA8CC00BDFCFD /* JKPopMenu */,
-				759C3F4C1BBF802000BDFCFD /* SliderViewController.h */,
-				759C3F4D1BBF802000BDFCFD /* SliderViewController.m */,
 				759C3F491BBF79CC00BDFCFD /* RNFrostedSidebar.h */,
 				759C3F4A1BBF79CC00BDFCFD /* RNFrostedSidebar.m */,
 			);
@@ -799,6 +810,21 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
+		75FDCCD71EFB4ECB009FBDE5 /* RESideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				75FDCCD81EFB4ECB009FBDE5 /* RECommonFunctions.h */,
+				75FDCCD91EFB4ECB009FBDE5 /* RECommonFunctions.m */,
+				75FDCCE31EFB5F6A009FBDE5 /* RESideMenu+MyFunction.h */,
+				75FDCCE41EFB5F6A009FBDE5 /* RESideMenu+MyFunction.m */,
+				75FDCCDA1EFB4ECB009FBDE5 /* RESideMenu.h */,
+				75FDCCDB1EFB4ECB009FBDE5 /* RESideMenu.m */,
+				75FDCCDC1EFB4ECB009FBDE5 /* UIViewController+RESideMenu.h */,
+				75FDCCDD1EFB4ECB009FBDE5 /* UIViewController+RESideMenu.m */,
+			);
+			path = RESideMenu;
+			sourceTree = "<group>";
+		};
 		9CC5BDA0BEFF3591ABD1B9D2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -936,6 +962,7 @@
 				75561A961BC272E100650B06 /* LaunchScreen.xib in Resources */,
 				756C9CCE1BC93FAB0005DDDE /* Localizable.strings in Resources */,
 				75FDCC971EFA1620009FBDE5 /* AppsCollectionViewCell.xib in Resources */,
+				75FDCCE21EFB5319009FBDE5 /* Stars@2x.png in Resources */,
 				759C3F911BBFD14600BDFCFD /* voicemail@2x.png in Resources */,
 				75FDCCC81EFA3443009FBDE5 /* toutiao.jpeg in Resources */,
 				75DBD9841BE50524007269F9 /* SMS_SDKLocalizable.strings in Resources */,
@@ -1011,6 +1038,7 @@
 				759C3F5C1BBFA8CC00BDFCFD /* JKPopMenuView.m in Sources */,
 				756E0C631BE59F03003CBF50 /* SectionsViewController.m in Sources */,
 				759C3F551BBFA7F700BDFCFD /* TuanViewController.m in Sources */,
+				75FDCCDE1EFB4ECB009FBDE5 /* RECommonFunctions.m in Sources */,
 				75FDCCC21EFA2419009FBDE5 /* View+MASAdditions.m in Sources */,
 				759C3F9D1BBFD2B600BDFCFD /* BaseWangViewController.m in Sources */,
 				759C3F471BBF793B00BDFCFD /* MainViewController.m in Sources */,
@@ -1029,15 +1057,17 @@
 				756E0C761BE5A1C0003CBF50 /* SMS_MBProgressHUD.m in Sources */,
 				75A76E6B1E0C2863004CC791 /* UserAgreementController.m in Sources */,
 				756A4FC11BDCCAB70068A5C6 /* MBProgressHUD.m in Sources */,
+				75FDCCE01EFB4ECB009FBDE5 /* UIViewController+RESideMenu.m in Sources */,
 				756E0C751BE5A1C0003CBF50 /* SMS_MBProgressHUD+Add.m in Sources */,
-				759C3F4E1BBF802000BDFCFD /* SliderViewController.m in Sources */,
 				75FDCCBB1EFA2419009FBDE5 /* MASConstraint.m in Sources */,
+				75FDCCDF1EFB4ECB009FBDE5 /* RESideMenu.m in Sources */,
 				756E0C601BE59EDA003CBF50 /* RegViewController.m in Sources */,
 				759C3F941BBFD15200BDFCFD /* SFSCircleLayout.m in Sources */,
 				755E88DC1BD38B1C00C3D967 /* AnimationPauseViewController.m in Sources */,
 				75A76E681E0C1D0E004CC791 /* FindMyPassWordViewController.m in Sources */,
 				75FDCCC31EFA2419009FBDE5 /* ViewController+MASAdditions.m in Sources */,
 				756A4FBD1BDCA4DD0068A5C6 /* SettingTableViewController.m in Sources */,
+				75FDCCE51EFB5F6A009FBDE5 /* RESideMenu+MyFunction.m in Sources */,
 				759C3F6A1BBFBC8F00BDFCFD /* WangGouViewController.m in Sources */,
 				759C3F5B1BBFA8CC00BDFCFD /* JKPopMenuItem.m in Sources */,
 				75B851631BC3A12900ECEFE1 /* GMDCircleLoader.m in Sources */,

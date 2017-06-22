@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface LeftNagViewController : UINavigationController
+#import "BaseNavViewController.h"
+@interface LeftNagViewController : BaseNavViewController
 
 @end

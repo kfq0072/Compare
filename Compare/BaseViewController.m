@@ -21,7 +21,7 @@
     UIColor *topColor = [UIColor colorWithRed:196.0f/255.0f green:166.0/255.0 blue:189.0f/255.0f alpha:1.0];
     UIImage *imagetop= [Utility createImageWithColor:topColor];
     [self.navigationController.navigationBar setBackgroundImage:imagetop forBarMetrics:UIBarMetricsDefault];
-
+    
     // Do any additional setup after loading the view.
 }
 
@@ -81,7 +81,6 @@
 }
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
     NSLog(@"load iad error : %@",error);
-//        _bannerView.frame = CGRectOffset(_bannerView.frame, 0, 50);
     _bannerView.hidden = YES;
 }
 - (void)bannerViewActionDidFinish:(ADBannerView *)banner {
